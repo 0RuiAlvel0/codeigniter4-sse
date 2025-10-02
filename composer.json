@@ -1,0 +1,27 @@
+{
+    "name": "0ruialvel0/codeigniter4-sse",
+    "description": "Simple SSE module for CodeIgniter 4",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Supertechman",
+            "email": "parafernalia.dvp@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.2",
+        "codeigniter4/framework": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "SseModule\\": "src/"
+        }
+    },
+    "extra": {
+        "codeigniter4": {
+            "discoverable": true
+        }
+    }
+}
