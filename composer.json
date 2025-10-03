@@ -12,7 +12,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.2",
-        "codeigniter4/framework": "^4.2"
+        "codeigniter4/framework": "*"
     },
     "autoload": {
         "psr-4": {
