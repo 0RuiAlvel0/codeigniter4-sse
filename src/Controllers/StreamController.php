@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace SseModule\Controllers;
 
 use CodeIgniter\Controller;
 use SseModule\Config\Sse;

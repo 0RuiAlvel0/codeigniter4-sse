@@ -1,13 +1,13 @@
 if (!!window.EventSource) {
-    const source = new EventSource('/sse/stream');
+    const source = new EventSource('sse/stream');
 
     source.addEventListener('event_name1', function(e) {
         const data = JSON.parse(e.data);
-        // Add code here, e.g. alert('Event 1 triggered at ');
+        // Add code here, e.g. alert('Event 1 triggered at ' + data.timestamp);
     });
 
     source.addEventListener('event_name2', function(e) {
         const data = JSON.parse(e.data);
-        // Add code here, e.g. alert('Event 2 triggered ');
+        // Add code here, e.g. alert('Event 2 triggered at ' + data.timestamp);
     });
 }

@@ -24,16 +24,48 @@ SSE_POLL_INTERVAL=2
 SSE_EVENTS=event_name1:event_cache_name1,event_name12:event_cache_name2
 ```
 
-## 📡️ Usage
+## Usage
 
 Trigger events from anywhere in your code:
 
 ```php
-cache()->save('event_cache_name1', '1');
+cache()->save('event_cache_key1', '1');
 ```
 
 This will set the corresponding cache file which will trigger the StreamController
 into sending the event to the JS client.
+
+## Practical example
+
+1. Assuming a working fresh CI4 install, follow the procedure to install.
+Then go to app/Controllers/Home.php controller and add
+
+```php
+cache()->save('event_cache_key1', '1');
+```
+on the index(method).
+
+2. If everything installed correctly, you should have a public/js/sse-client.js file. open it and change the first trigger to open a browser alert when the event is detected
+
+```js
+source.addEventListener('event_name1', function(e) {
+        const data = JSON.parse(e.data);
+        alert('Event 1 triggered at ' + data.timestamp);
+        // Add code here, e.g. alert('Event 1 triggered at ');
+    });
+```
+
+3. For further checks to see if all is good add the following somewhere on the app/Views/welcome_message.php
+
+```html
+Class exists?
+<?php 
+var_dump(class_exists('\SseModule\Controllers\StreamController'));
+?>
+```
+This will be "true" if it all installed well.
+
+4. Observe in wonder: go to https://yoursite.com and after a few seconds (actually about the number of seconds you set on SSE_STREAM_DURATION, which by default is 15s and set during the script installation) you should see a browser alert with the trigger timestamp. Neat.
 
 ## Frontend
 
