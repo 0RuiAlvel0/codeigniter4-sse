@@ -67,6 +67,13 @@ This will be "true" if it all installed well.
 
 4. Observe in wonder: go to https://yoursite.com and after a few seconds (actually about the number of seconds you set on SSE_STREAM_DURATION, which by default is 15s and set during the script installation) you should see a browser alert with the trigger timestamp. Neat.
 
+5. I forgot the following instruction on the first version of this addin: you must define the following route on your Routes.php file:
+
+```php
+// SSE route for FL sync notifications
+$routes->get('/sse/stream', '\SseModule\Controllers\StreamController::stream');
+```
+
 ## Frontend
 
 Include `public/js/`[`sse-client.js`](https://sse-client.js) and customize:
