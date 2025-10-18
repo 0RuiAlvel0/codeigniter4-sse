@@ -9,7 +9,7 @@ class Install extends BaseCommand
 {
 	protected $group       = 'SSE';
 	protected $name        = 'sse:install';
-	protected $description = 'Installs the SSE module configuration and assets';
+	protected $description = 'Installs the SSE module configuration and assets.';
 
 	public function run(array $params)
 	{

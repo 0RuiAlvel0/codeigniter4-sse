@@ -9,7 +9,7 @@ class Uninstall extends BaseCommand
 {
     protected $group       = 'SSE';
     protected $name        = 'sse:uninstall';
-    protected $description = 'Removes SSE module assets and configuration';
+    protected $description = 'Removes SSE module assets and configuration.';
 
     public function run(array $params)
     {
