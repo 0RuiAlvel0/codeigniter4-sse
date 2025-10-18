@@ -43,7 +43,7 @@ Then go to app/Controllers/Home.php controller and add
 ```php
 cache()->save('event_cache_key1', '1');
 ```
-on the index(method).
+on the index() method.
 
 2. If everything installed correctly, you should have a public/js/sse-client.js file. open it and change the first trigger to open a browser alert when the event is detected
 
