@@ -32,8 +32,6 @@ class Install extends BaseCommand
 		if (file_exists($envPath)) {
 			$envContent = file_get_contents($envPath);
 			if (! str_contains($envContent, 'SSE_STREAM_DURATION')) {
-				// TODO: #1 To be improved -> ask the user during installation for event names and keys.
-				// TODO: #2 To be improved -> prompt the user for event names and perform template replacement in sse-client.js to inject those event names.
 				file_put_contents($envPath, "\n# codeigniter-sse related settings (this will auto-remove when you uninstall the add-on with php spark sse:uninstall)\n\nSSE_STREAM_DURATION=15\nSSE_POLL_INTERVAL=2\nSSE_EVENTS=event_name1:event_cache_key1,event_name2:event_cache_key2\n", FILE_APPEND);
 				CLI::write('Default SSE config added to .env', 'green');
 			} else {
